@@ -1,5 +1,5 @@
 {
-    "name": "paegle/controlle",
+    "name": "paegle/php-controlle",
     "description": "SDK for integration with www.controlle.com",
     "homepage": "http://github.com/paegle/php-controlle",
     "keywords": ["SDK", "Controlle", "Organizze", "api", "rest"],
