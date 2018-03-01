@@ -1,0 +1,24 @@
+{
+    "name": "paegle/controlle",
+    "description": "SDK for integration with www.controlle.com",
+    "homepage": "http://github.com/paegle/controlle",
+    "keywords": ["SDK", "Controlle", "Organizze", "api", "rest"],
+    "version": "0.0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mateus Paegle",
+            "email": "mateus.paegle@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.1",
+        "nategood/httpful": "^0.2.20"
+    },
+    "autoload": {
+        "psr-0": {
+            "Controlle": "src/"
+        }
+    }
+}
