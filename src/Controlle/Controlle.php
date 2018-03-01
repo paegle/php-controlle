@@ -23,6 +23,8 @@ class Controlle
         } catch(Exception $err) {
             throw $err;
         }
+
+        return $this;
     }
 
     public function fetchContacts()

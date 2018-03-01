@@ -6,6 +6,9 @@ use \Exception;
 
 class Contact
 {
+    const USER_CLIENT = 'true';
+    const USER_SUPPLIER = 'true';
+
     private $name;
     private $email;
     private $phone_number;
@@ -35,6 +38,14 @@ class Contact
 
     public function setPhoneNumber($phone_number)
     {
+        $phone_number = preg_replace("/[^0-9]/", "", $phone_number);
+    
+        if (strlen($phone_number) == 7) {
+            $phone_number = preg_replace("/([0-9]{3})([0-9]{4})/", "$1-$2", $phone_number);
+        } else if (strlen($phone_number) == 10) {
+            $phone_number = preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "($1) $2-$3", $phone_number);
+        }
+
         $this->phone_number = $phone_number;
         return $this;
     }
@@ -51,15 +62,26 @@ class Contact
         return $this;
     }
 
-    public function setClient($client)
+    public function setType($type)
     {
-        $this->client = $client;
+        if ($type == Contact::USER_CLIENT) {
+            $this->setClient();
+        } else if ($type == Contact::USER_SUPPLIER) {
+            $this->setSupplier();
+        }
+
+        return $this;
+    }
+
+    private function setClient()
+    {
+        $this->client = true;
         return $this;
     }
     
-    public function setSupplier($supplier)
+    private function setSupplier()
     {
-        $this->supplier = $supplier;
+        $this->supplier = true;
         return $this;
     }
 
