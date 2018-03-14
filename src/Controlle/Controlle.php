@@ -18,8 +18,7 @@ class Controlle
     public function __construct(array $config = [])
     {   
         try {
-            $controlleConfig = Config::getInstance();
-            $controlleConfig->set($config);
+            (Config::getInstance())->set($config);
         } catch(Exception $err) {
             throw $err;
         }
