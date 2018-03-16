@@ -118,9 +118,10 @@ class Transaction
         return $this;
     }
 
-    public function setContact($contact_id)
+    public function setContactId($contact_id)
     {
         $this->contact_id = $contact_id;
+        return $this;
     }
 
     public function validate()
