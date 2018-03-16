@@ -18,6 +18,7 @@ class Transaction
     private $category_id;
     private $activity_type;
     private $paid;
+    private $contact_id;
 
     public function __construct()
     {
@@ -117,6 +118,11 @@ class Transaction
         return $this;
     }
 
+    public function setContact($contact_id)
+    {
+        $this->contact_id = $contact_id;
+    }
+
     public function validate()
     {
         if (!isset($this->description)) {
@@ -149,7 +155,8 @@ class Transaction
             'total_installments' => $this->total_installments,
             'account_id' => $this->account_id,
             'category_id' => $this->category_id,
-            'paid' => $this->paid
+            'paid' => $this->paid,
+            'contact_id' => $this->contact_id
         ];
 
         if (isset($this->notes)) {

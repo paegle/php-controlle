@@ -3,7 +3,7 @@
     "description": "SDK for integration with www.controlle.com",
     "homepage": "http://github.com/paegle/php-controlle",
     "keywords": ["SDK", "Controlle", "Organizze", "api", "rest"],
-    "version": "0.1.4",
+    "version": "0.1.5",
     "license": "MIT",
     "authors": [
         {
