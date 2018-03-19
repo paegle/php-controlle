@@ -95,6 +95,16 @@ class Controlle
         }
     }
 
+    public function deleteTransaction($id)
+    {
+        try {
+            $url = "transactions/{$id}";
+            return Request::delete($url);
+        } catch(Exception $err) {
+            throw $err;
+        }
+    }
+
     public function fetchCategories()
     {
         try {
