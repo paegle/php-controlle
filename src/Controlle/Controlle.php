@@ -101,7 +101,7 @@ class Controlle
             $url = "transactions/{$id}";
 
             if ($transaction->validate()) {
-                return Request::post($url, $transaction->toArray());
+                return Request::put($url, $transaction->toArray());
             }
         } catch(Exception $err) {
             throw $err;
