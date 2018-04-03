@@ -11,7 +11,7 @@ try {
     $client = new Controlle($config);
 
     var_dump($client->createContact(
-      (new Contact())->setEmail('liliano.damata@example.com')->setName('Liliano da Mata')
+      (new Contact())->setType(Contact::TYPE_CLIENT)->setEmail('liliano.damata@example.com')->setName('Liliano da Mata')
     ));
 } catch(\Exception $err) {
     echo $err->getMessage();

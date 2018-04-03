@@ -88,7 +88,20 @@ class Controlle
             $url = 'transactions';
 
             if ($transaction->validate()) {
-                return Request::post($url, $transaction->toArray());   
+                return Request::post($url, $transaction->toArray());
+            }
+        } catch(Exception $err) {
+            throw $err;
+        }
+    }
+
+    public function updateTransaction($id, TransactionModel $transaction)
+    {
+        try {
+            $url = "transactions/{$id}";
+
+            if ($transaction->validate()) {
+                return Request::post($url, $transaction->toArray());
             }
         } catch(Exception $err) {
             throw $err;
