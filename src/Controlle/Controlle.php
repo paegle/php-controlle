@@ -137,4 +137,14 @@ class Controlle
             throw $err;
         }
     }
+
+    public function getTransactionById($id)
+    {
+        try {
+            $url = "/transactions/{$id}";
+            return Request::get($url);
+        } catch(Exception $err) {
+            throw $err;
+        }
+    }
 }
