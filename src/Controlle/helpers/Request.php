@@ -19,7 +19,7 @@ class Request
                 throw new Exception($response->body->error);
             }
 
-            throw new Exception($response->body);
+            throw new Exception(\json_encode($response->body));
         }
         
         return $response->body;
@@ -38,7 +38,7 @@ class Request
                 throw new Exception($response->body->error);
             }
 
-            throw new Exception($response->body);
+            throw new Exception(\json_encode($response->body));
         }
         
         return $response->body;
@@ -57,7 +57,7 @@ class Request
                 throw new Exception($response->body->error);
             }
 
-            throw new Exception($response->body);
+            throw new Exception(\json_encode($response->body));
         }
         
         return $response->body;
@@ -75,7 +75,7 @@ class Request
                 throw new Exception($response->body->error);
             }
 
-            throw new Exception($response->body);
+            throw new Exception(\json_encode($response->body));
         }
         
         return $response->body;
