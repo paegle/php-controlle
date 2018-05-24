@@ -15,7 +15,11 @@ class Request
             ->send();
         
         if ($response->code != 200) {
-            throw new Exception($response->body->error);
+            if (isset($response->body->error)) {
+                throw new Exception($response->body->error);
+            }
+
+            throw new Exception($response->body);
         }
         
         return $response->body;
@@ -30,7 +34,11 @@ class Request
             ->send();
         
         if ($response->code != 200 && $response->code != 201) {
-            throw new Exception($response->body->error);
+            if (isset($response->body->error)) {
+                throw new Exception($response->body->error);
+            }
+
+            throw new Exception($response->body);
         }
         
         return $response->body;
@@ -45,7 +53,11 @@ class Request
             ->send();
         
         if ($response->code != 200 && $response->code != 201) {
-            throw new Exception($response->body->error);
+            if (isset($response->body->error)) {
+                throw new Exception($response->body->error);
+            }
+
+            throw new Exception($response->body);
         }
         
         return $response->body;
@@ -59,7 +71,11 @@ class Request
             ->send();
         
         if ($response->code != 200) {
-            throw new Exception($response->body->error);
+            if (isset($response->body->error)) {
+                throw new Exception($response->body->error);
+            }
+
+            throw new Exception($response->body);
         }
         
         return $response->body;
